@@ -1,24 +1,76 @@
-<html>  
-    <head>  
-        <title>  
-            PELICULA
-        </title>
-    </head>
-    <body>
-        <!-- HOLA ESTO ES COMENTARIO -->
-        <h1>Mi película favorita </h1> <br/>   
-        <h3>Como entrenar a tu dragon</h3>
-        <p>
-            <b> Sinopsis:</b> Hipo mientras captura 
-            un dragón como rito de iniciación e 
-            intenta entrenarlo para que no 
-            sea exiliado de <b> Berk</b>, 
-            como es tradición para los 
-            jóvenes vikingos en esta isla
-        </p>
-        <center>
-            <img src="img/pelicula1.webp" />
-        </center>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido - Películas</title>
+    
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    </body>
+        /* Centramos todo en la pantalla */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212; /* Fondo oscuro de tu diseño */
+            color: #e0e0e0;
+            height: 100vh; /* Ocupa el 100% de la altura de la pantalla */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Reutilizamos tus clases personalizadas */
+        .estilo_titulo {
+            color: rgb(66, 143, 143);
+            font-family: 'Courier New', Courier, monospace;
+            font-style: italic;
+            font-weight: bold;
+            font-size: 4rem;
+            margin-bottom: 10px;
+        }
+
+        .estilo_parrafo {
+            color: rgb(255, 255, 255);
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        /* Estilo para que el enlace parezca un botón */
+        .boton-ingresar {
+            display: inline-block;
+            background-color: rgb(66, 143, 143); /* Tu color personalizado */
+            color: #121212;
+            padding: 15px 40px;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        /* Efecto al pasar el ratón por encima del botón */
+        .boton-ingresar:hover {
+            background-color: #ffffff;
+            transform: scale(1.05); /* Hace que el botón crezca un poquito */
+        }
+    </style>
+</head>
+<body>
+    
+    <h1 class="estilo_titulo">Bienvenido</h1>
+    <p class="estilo_parrafo">Entra para ver mi película favorita</p>
+    
+    <!-- El enlace a tu otra página con target="_blank" para abrir en nueva pestaña -->
+    <a href="pagina.html" target="_blank" class="boton-ingresar">Ingresar</a>
+
+</body>
 </html>

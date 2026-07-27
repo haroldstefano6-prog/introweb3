@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Película Favorita - Página 2</title>
+    
+    <!-- AQUÍ INCLUIMOS TODO EL CSS DIRECTAMENTE -->
+    <style>
+        .estilo_titulo {
+            color: rgb(66, 143, 143);
+            font-family: 'Courier New', Courier, monospace;
+            font-style: italic;
+            font-weight: bold;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .estilo_parrafo {
+            color: rgb(255, 255, 255);
+            font-style: italic;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            line-height: 1.6;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            grid-template-areas: 
+                "header header"
+                "nav nav"
+                "main aside"
+                "footer footer";
+            gap: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        header {
+            grid-area: header;
+            background-color: #1a1a1a;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 10px;
+            border-bottom: 4px solid rgb(66, 143, 143);
+        }
+
+        nav {
+            grid-area: nav;
+            background-color: #222222;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav a {
+            color: rgb(66, 143, 143);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+        }
+
+        main {
+            grid-area: main;
+            background-color: #1a1a1a;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        article {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        section {
+            padding-bottom: 20px;
+            border-bottom: 1px solid #333333;
+        }
+
+        section:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        section h2 {
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        section ul {
+            list-style-type: square;
+            margin-left: 20px;
+        }
+
+        section li {
+            margin-bottom: 10px;
+        }
+
+        aside {
+            grid-area: aside;
+            background-color: #1a1a1a;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid rgb(66, 143, 143);
+        }
+
+        aside h2 {
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        aside ul {
+            list-style-type: none;
+        }
+
+        aside li {
+            margin-bottom: 15px;
+            background-color: #2a2a2a;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        aside strong {
+            color: rgb(66, 143, 143);
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: #0a0a0a;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            color: #777777;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                grid-template-columns: 1fr;
+                grid-template-areas: 
+                    "header"
+                    "nav"
+                    "main"
+                    "aside"
+                    "footer";
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <!-- Clases aplicadas aquí -->
+        <h1 class="estilo_titulo">[Nombre de tu segunda película]</h1>
+        <p class="estilo_parrafo">Una frase icónica o un breve lema de la película.</p>
+    </header>
+
+    <nav>
+        <ul>
+            <!-- Enlace para volver a la página de bienvenida o inicio -->
+            <li><a href="index.html">⬅ Volver al Inicio</a></li>
+            <li><a href="#sinopsis">Sinopsis</a></li>
+            <li><a href="#personajes">Personajes Principales</a></li>
+            <li><a href="#opinion">Por qué es mi favorita</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article>
+            <section id="sinopsis">
+                <h2>Sinopsis</h2>
+                <p>Aquí va un resumen de la trama principal de la película, detallando de qué trata sin hacer demasiados spoilers.</p>
+            </section>
+
+            <section id="personajes">
+                <h2>Personajes Principales</h2>
+                <ul>
+                    <li><strong>[Personaje 1]:</strong> Interpretado por [Actor/Actriz].</li>
+                    <li><strong>[Personaje 2]:</strong> Interpretado por [Actor/Actriz].</li>
+                    <li><strong>[Personaje 3]:</strong> Interpretado por [Actor/Actriz].</li>
+                </ul>
+            </section>
+
+            <section id="opinion">
+                <h2>Por qué es mi favorita</h2>
+                <p>En esta sección puedes explicar qué es lo que más te gusta de la película: la dirección, la banda sonora, los efectos visuales, la historia, etc.</p>
+            </section>
+        </article>
+    </main>
+
+    <aside>
+        <h2>Datos Curiosos</h2>
+        <ul>
+            <li><strong>Director:</strong> [Nombre del director]</li>
+            <li><strong>Año de lanzamiento:</strong> [Año]</li>
+            <li><strong>Género:</strong> [Género cinematográfico]</li>
+        </ul>
+    </aside>
+
+    <footer>
+        <p>&copy; 2026 Harold Peñarrieta - Reseña de mi película favorita.</p>
+    </footer>
+
+</body>
+</html>
