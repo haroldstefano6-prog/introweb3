@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Las 7 Maravillas del Mundo</title>
+    
+    <!-- Fuentes elegantes -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* === ESTILOS BASE Y ANIMACIONES === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* Fondo con degradado animado */
+            background: linear-gradient(-45deg, #1a2a3a, #0f171e, #1e3b4d, #254a42);
+            background-size: 400% 400%;
+            animation: gradientAnimado 15s ease infinite;
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            /* Eliminamos la restricción de altura para permitir scrolear */
+        }
+
+        @keyframes gradientAnimado {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* === ENCABEZADO PRINCIPAL === */
+        header {
+            padding: 12vh 20px 8vh;
+            text-align: center;
+            perspective: 1000px;
+        }
+
+        header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 5rem; /* Letras mucho más grandes */
+            color: #e0f2f1;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 0 5px 25px rgba(0,0,0,0.6);
+            transition: all 0.5s ease;
+            cursor: default;
+            margin-bottom: 20px;
+        }
+
+        header h1:hover {
+            color: #d4af37;
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.6), 0 10px 40px rgba(0,0,0,0.8);
+            transform: scale(1.02) rotateX(5deg);
+        }
+
+        header p {
+            font-size: 1.5rem;
+            color: #aebfb8;
+            font-weight: 300;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* === SECCIÓN DE INTERACTIVIDAD (Tarjetas Principales) === */
+        .contenedor-principal {
+            display: flex;
+            gap: 50px; /* Más separación */
+            max-width: 1400px; /* Mucho más ancho */
+            width: 95%;
+            margin: 0 auto 100px;
+            flex-wrap: wrap;
+        }
+
+        .tarjeta {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 60px; /* Más padding interior */
+            border-radius: 30px;
+            flex: 1;
+            min-width: 400px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            animation: flotar 6s ease-in-out infinite;
+        }
+
+        .tarjeta:nth-child(2) {
+            animation-delay: 3s;
+        }
+
+        @keyframes flotar {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .tarjeta h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.8rem; /* Títulos de tarjeta más grandes */
+            margin-bottom: 35px;
+            color: #d4af37;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 15px;
+        }
+
+        /* === MENÚ (Izquierda) === */
+        nav {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* Botones más separados */
+        }
+
+        nav a {
+            position: relative;
+            display: flex;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.3);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 22px 30px; /* Botones más grandes */
+            border-radius: 15px;
+            font-size: 1.4rem; /* Texto más grande */
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.4s ease;
+        }
+
+        nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+            transition: all 0.5s ease;
+        }
+
+        nav a:hover {
+            transform: translateX(15px);
+            border-color: rgba(212, 175, 55, 0.6);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.15);
+        }
+
+        nav a:hover::before {
+            left: 100%;
+        }
+
+        .codigo-pais {
+            background-color: rgba(212, 175, 55, 0.2);
+            color: #d4af37;
+            font-size: 1rem;
+            font-weight: bold;
+            padding: 6px 12px;
+            border-radius: 8px;
+            margin-right: 25px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover .codigo-pais {
+            background-color: #d4af37;
+            color: #121212;
+        }
+
+        /* === INFORMACIÓN DINÁMICA (Derecha) === */
+        .info-contenido {
+            transition: opacity 0.4s ease;
+        }
+
+        .texto-intro {
+            font-size: 1.5rem; /* Texto descriptivo más grande */
+            line-height: 1.9;
+            color: #e0f2f1;
+            font-weight: 300;
+        }
+
+        .texto-intro p {
+            margin-bottom: 25px;
+        }
+
+        .texto-intro strong {
+            color: #d4af37;
+        }
+
+        /* === SECCIONES INFERIORES (Para Scrolear) === */
+        .seccion-info {
+            max-width: 1200px;
+            margin: 0 auto 120px;
+            padding: 50px;
+            background: rgba(0, 0, 0, 0.2);
+            border-left: 5px solid #d4af37;
+            border-radius: 0 20px 20px 0;
+        }
+
+        .seccion-info h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            color: #d4af37;
+            margin-bottom: 30px;
+        }
+
+        .seccion-info p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: #c8d6d0;
+            margin-bottom: 20px;
+        }
+
+        /* Efecto de revelado al scrolear */
+        .revelar {
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 0.8s ease-out;
+        }
+
+        .revelar.activo {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* === PIE DE PÁGINA === */
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: rgba(0,0,0,0.5);
+            font-size: 1.1rem;
+            color: #888;
+        }
+
+        /* Responsividad */
+        @media (max-width: 900px) {
+            header h1 { font-size: 3.5rem; }
+            .contenedor-principal { flex-direction: column; }
+            .tarjeta { min-width: 100%; padding: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <h1>Las 7 Maravillas</h1>
+        <p>Un viaje inmersivo a través de los monumentos más asombrosos construidos por la humanidad. Selecciona tu destino.</p>
+    </header>
+
+    <!-- Sección Interactiva Principal -->
+    <div class="contenedor-principal">
+        
+        <!-- SECCIÓN IZQUIERDA: MENÚ -->
+        <aside class="tarjeta">
+            <h2>Explorar Destinos</h2>
+            <nav id="menu-maravillas">
+                <a href="pagina1.html" data-id="muralla">
+                    <span class="codigo-pais">CN</span> Gran Muralla China
+                </a>
+                <a href="pagina2.html" data-id="petra">
+                    <span class="codigo-pais">JO</span> Petra
+                </a>
+                <a href="pagina3.html" data-id="coliseo">
+                    <span class="codigo-pais">IT</span> Coliseo Romano
+                </a>
+                <a href="pagina4.html" data-id="chichen">
+                    <span class="codigo-pais">MX</span> Chichén Itzá
+                </a>
+                <a href="pagina5.html" data-id="machu">
+                    <span class="codigo-pais">PE</span> Machu Picchu
+                </a>
+                <a href="pagina6.html" data-id="taj">
+                    <span class="codigo-pais">IN</span> Taj Mahal
+                </a>
+                <a href="pagina7.html" data-id="cristo">
+                    <span class="codigo-pais">BR</span> Cristo Redentor
+                </a>
+            </nav>
+        </aside>
+
+        <!-- SECCIÓN DERECHA: INFORMACIÓN DINÁMICA -->
+        <main class="tarjeta">
+            <div id="panel-info" class="info-contenido">
+                <h2 id="info-titulo">Descubre nuestro mundo</h2>
+                <div id="info-texto" class="texto-intro">
+                    <p>
+                        Pasa el cursor sobre una maravilla en el menú de la izquierda para ver un adelanto, o haz clic en cualquiera de ellas para explorar su historia completa, su arquitectura y descubrir datos curiosos.
+                    </p>
+                    <p>
+                        Estas asombrosas estructuras fueron elegidas por más de <strong>100 millones de personas</strong> alrededor del mundo, representando el máximo ingenio de las civilizaciones pasadas.
+                    </p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Secciones adicionales para rellenar espacio y permitir scroll -->
+    <section class="seccion-info revelar">
+        <h3>El Concurso Histórico</h3>
+        <p>En el año 2000, la fundación suiza <strong>New7Wonders</strong> inició una campaña mundial para elegir a las Nuevas Siete Maravillas del Mundo. El objetivo era actualizar la lista original de la antigüedad, de la cual solo la Gran Pirámide de Guiza sigue en pie.</p>
+        <p>A través de internet y mensajes de texto, personas de todos los rincones del planeta emitieron sus votos. La campaña culminó el 7 de julio de 2007 (07/07/07) con una majestuosa ceremonia en Lisboa, Portugal, donde se anunciaron los ganadores definitivos que estás a punto de explorar en esta web.</p>
+    </section>
+
+    <section class="seccion-info revelar" style="border-left: none; border-right: 5px solid #d4af37; border-radius: 20px 0 0 20px; text-align: right;">
+        <h3>Arquitectura y Misterio</h3>
+        <p>Cada una de estas maravillas cuenta una historia diferente sobre la humanidad. Desde la precisión astronómica de los Mayas en Chichén Itzá, hasta la devoción y el amor tallado en mármol del Taj Mahal, pasando por la colosal ingeniería defensiva de la Gran Muralla China.</p>
+        <p>Te invitamos a navegar por cada sección de esta página web, donde hemos recopilado información detallada y visual para que experimentes la grandeza de estos siete pilares de nuestra historia universal.</p>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2026 - Explora las 7 Maravillas del Mundo Moderno. Creado con pasión por el diseño web.</p>
+    </footer>
+
+    <!-- === JAVASCRIPT === -->
+    <script>
+        // 1. LÓGICA PARA EL MENÚ INTERACTIVO (Igual que antes pero optimizado)
+        const datosMaravillas = {
+            'muralla': {
+                titulo: 'La Gran Muralla China',
+                texto: '<p>Una antigua serie de fortificaciones construidas a lo largo de las fronteras históricas del norte de China.</p><p><strong>Dato:</strong> Con más de 21,000 km de largo, es la estructura arquitectónica más extensa jamás construida por el ser humano, atravesando montañas, desiertos y praderas.</p>'
+            },
+            'petra': {
+                titulo: 'Petra, Jordania',
+                texto: '<p>Conocida como la "Ciudad Rosa" por el vibrante color de la piedra arenisca en la que fue tallada hace más de 2000 años por los nabateos.</p><p><strong>Dato:</strong> Aún hoy, se estima que solo el 15% de la inmensa ciudad original ha sido descubierta por los arqueólogos.</p>'
+            },
+            'coliseo': {
+                titulo: 'El Coliseo Romano',
+                texto: '<p>El anfiteatro más grande jamás construido en la historia, situado justo en el centro de la ciudad de Roma.</p><p><strong>Dato:</strong> En su época de máximo esplendor, poseía un complejo sistema subterráneo y podía albergar hasta 80,000 espectadores.</p>'
+            },
+            'chichen': {
+                titulo: 'Chichén Itzá, México',
+                texto: '<p>El complejo de ruinas mayas más famoso, dominado por la imponente y matemáticamente perfecta pirámide de Kukulkán.</p><p><strong>Dato:</strong> Durante los equinoccios, las sombras proyectadas en las escalinatas crean la ilusión de una gigantesca serpiente descendiendo.</p>'
+            },
+            'machu': {
+                titulo: 'Machu Picchu, Perú',
+                texto: '<p>Una ciudadela inca situada en lo alto de la cordillera de los Andes, rodeada de templos, andenes y canales de agua.</p><p><strong>Dato:</strong> Sus piedras monolíticas fueron cortadas con tal precisión que ni siquiera la hoja de un cuchillo puede pasar entre ellas, todo sin usar mortero.</p>'
+            },
+            'taj': {
+                titulo: 'Taj Mahal, India',
+                texto: '<p>Un inmenso y simétrico mausoleo de mármol blanco, construido en Agra por orden del emperador mogol Shah Jahan.</p><p><strong>Dato:</strong> Fue construido como símbolo de amor eterno para albergar la tumba de su esposa favorita, requiriendo el trabajo de 20,000 artesanos.</p>'
+            },
+            'cristo': {
+                titulo: 'Cristo Redentor, Brasil',
+                texto: '<p>Una gigantesca estatua art déco de Jesucristo con los brazos abiertos en Río de Janeiro, creada por Paul Landowski.</p><p><strong>Dato:</strong> Ubicada en la cima del cerro del Corcovado a 700 metros sobre el nivel del mar, ofrece una vista panorámica espectacular de toda la ciudad.</p>'
+            },
+            'default': {
+                titulo: 'Descubre nuestro mundo',
+                texto: '<p>Pasa el cursor sobre una maravilla en el menú de la izquierda para ver un adelanto, o haz clic en cualquiera de ellas para explorar su historia completa, su arquitectura y descubrir datos curiosos.</p><p>Estas asombrosas estructuras fueron elegidas por más de <strong>100 millones de personas</strong> alrededor del mundo, representando el máximo ingenio de las civilizaciones pasadas.</p>'
+            }
+        };
+
+        const enlaces = document.querySelectorAll('#menu-maravillas a');
+        const panelInfo = document.getElementById('panel-info');
+        const infoTitulo = document.getElementById('info-titulo');
+        const infoTexto = document.getElementById('info-texto');
+        const menuMaravillas = document.getElementById('menu-maravillas');
+
+        function actualizarPanel(id) {
+            panelInfo.style.opacity = 0; 
+            setTimeout(() => {
+                infoTitulo.innerHTML = datosMaravillas[id].titulo;
+                infoTexto.innerHTML = datosMaravillas[id].texto;
+                panelInfo.style.opacity = 1; 
+            }, 250); 
+        }
+
+        enlaces.forEach(enlace => {
+            enlace.addEventListener('mouseenter', function() {
+                const id = this.getAttribute('data-id');
+                actualizarPanel(id);
+            });
+        });
+
+        menuMaravillas.addEventListener('mouseleave', function() {
+            actualizarPanel('default');
+        });
+
+        // 2. LÓGICA PARA ANIMACIONES AL SCROLEAR
+        // Esto hace que las secciones de texto aparezcan mágicamente al bajar por la página
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('activo');
+                }
+            });
+        }, {
+            threshold: 0.2 // Se activa cuando el 20% del elemento es visible
+        });
+
+        const elementosOcultos = document.querySelectorAll('.revelar');
+        elementosOcultos.forEach((el) => observer.observe(el));
+    </script>
+</body>
+</html>

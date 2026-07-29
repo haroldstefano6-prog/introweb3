@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gran Muralla China - Las 7 Maravillas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* === ESTILOS BASE === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* === FONDO INMERSIVO PARALLAX === */
+        .hero-section {
+            position: relative;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            /* AQUÍ VA LA IMAGEN DE FONDO */
+            background-image: url('img/coliseoromano.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Efecto Parallax */
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(18,18,18,1) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            animation: fadeInDown 1.5s ease;
+        }
+
+        .hero-content h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 5rem;
+            color: #d4af37;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.8);
+            margin-bottom: 10px;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* === BOTÓN DE REGRESO === */
+        .btn-volver {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            z-index: 100;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            color: #d4af37;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            border: 1px solid #d4af37;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .btn-volver:hover {
+            background: #d4af37;
+            color: #121212;
+            transform: translateX(-5px);
+        }
+
+        /* === CONTENIDO DE LA MARAVILLA === */
+        .contenido-info {
+            max-width: 1200px;
+            margin: -50px auto 100px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        /* Tarjetas estilo Glassmorphism */
+        .tarjeta-info {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .tarjeta-info.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .tarjeta-info:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(212, 175, 55, 0.15);
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+
+        .tarjeta-info h2 {
+            font-family: 'Cinzel', serif;
+            color: #d4af37;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 10px;
+        }
+
+        .tarjeta-info p {
+            line-height: 1.8;
+            color: #cccccc;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        /* Animaciones */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Botón para regresar a pagina0.html -->
+    <a href="pagina0.html" class="btn-volver">
+        <span>&larr;</span> Volver al Menú
+    </a>
+
+    <!-- Cabecera con imagen -->
+    <header class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Coliseo Romano</h1>
+            <p>Italia 🇮🇹</p>
+        </div>
+    </header>
+
+    <!-- Información -->
+    <main class="contenido-info">
+        
+        <article class="tarjeta-info animar">
+            <h2>Historia Inmortal</h2>
+            <p>La Gran Muralla China es una antigua fortificación construida y reconstruida entre el siglo V a.C. y el siglo XVI para proteger la frontera norte del Imperio chino de los ataques de nómadas xiongnu de Mongolia y Manchuria.</p>
+            <p>Contando sus ramificaciones y construcciones secundarias, se calcula que tiene unos 21.200 kilómetros de largo, abarcando desde la frontera con Corea hasta el desierto de Gobi.</p>
+        </article>
+
+        <article class="tarjeta-info animar">
+            <h2>Datos Curiosos</h2>
+            <p>✨ <strong>Mito del espacio:</strong> Aunque es muy famosa la creencia de que se puede ver desde el espacio exterior a simple vista, esto es un mito desmentido por los astronautas.</p>
+            <p>✨ <strong>Materiales:</strong> Algunas secciones de la muralla fueron construidas utilizando una argamasa hecha con arroz glutinoso, lo que le dio una resistencia extraordinaria.</p>
+            <p>✨ <strong>El gran cementerio:</strong> Durante su construcción, se estima que murieron millones de trabajadores, muchos de los cuales fueron enterrados en sus inmediaciones.</p>
+        </article>
+
+    </main>
+
+    <!-- Script para animar las tarjetas al scrolear -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const tarjetas = document.querySelectorAll('.animar');
+            
+            // Hacemos que aparezcan con un ligero retraso en cascada
+            tarjetas.forEach((tarjeta, index) => {
+                setTimeout(() => {
+                    tarjeta.classList.add('visible');
+                }, 300 + (index * 200));
+            });
+        });
+    </script>
+
+</body>
+</html>
