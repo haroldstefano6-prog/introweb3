@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Sumas</h2>
+
+    <form>
+        <table>
+            <tr>
+                <td>Número 1:</td>
+                <td>
+                    <input id="txtNum1" type="text">
+                </td>
+            </tr>
+            <tr>
+                <td>Número 2:</td>
+                <td>
+                    <input id="txtNum2" type="text">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button id="btnSumar">Sumar</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>
+
+<script>
+    document.getElementById("btnSumar").addEventListener('click', function() {
+
+        var num1 = parseFloat(document.getElementById("txtNum1").value) || 0;
+        var num2 = parseFloat(document.getElementById("txtNum2").value) || 0;
+
+        var result = num1 + num2;
+        alert("El resultado es: " + result);
+    }
+    );
+</script>

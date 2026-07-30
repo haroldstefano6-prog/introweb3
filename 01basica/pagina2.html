@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Película Favorita - Página 2</title>
+    <title>Mi Película Favorita - Cómo entrenar a tu dragón</title>
     
-    <!-- AQUÍ INCLUIMOS TODO EL CSS DIRECTAMENTE -->
+    <!-- CSS DIRECTAMENTE INCLUIDO -->
     <style>
         .estilo_titulo {
             color: rgb(66, 143, 143);
@@ -118,6 +118,16 @@
             margin-bottom: 10px;
         }
 
+        /* Estilo para la imagen de la película con bordes redondeados */
+        .imagen-pelicula {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
         aside {
             grid-area: aside;
             background-color: #1a1a1a;
@@ -178,14 +188,12 @@
 <body>
 
     <header>
-        <!-- Clases aplicadas aquí -->
-        <h1 class="estilo_titulo">[Nombre de tu segunda película]</h1>
-        <p class="estilo_parrafo">Una frase icónica o un breve lema de la película.</p>
+        <h1 class="estilo_titulo">Cómo entrenar a tu dragón</h1>
+        <p class="estilo_parrafo">Un mundo donde vikingos y dragones chocan, pero un joven cambia el destino de todos.</p>
     </header>
 
     <nav>
         <ul>
-            <!-- Enlace para volver a la página de bienvenida o inicio -->
             <li><a href="index.html">⬅ Volver al Inicio</a></li>
             <li><a href="#sinopsis">Sinopsis</a></li>
             <li><a href="#personajes">Personajes Principales</a></li>
@@ -197,21 +205,23 @@
         <article>
             <section id="sinopsis">
                 <h2>Sinopsis</h2>
-                <p>Aquí va un resumen de la trama principal de la película, detallando de qué trata sin hacer demasiados spoilers.</p>
+                <!-- Espacio para la imagen con bordes redondeados -->
+                <img src="img/ceatd.jpg" alt="Cómo entrenar a tu dragón" class="imagen-pelicula">
+                <p>La historia sigue a Hipo, un joven vikingo que no encaja con las tradiciones de su tribu de cazadores de dragones en la isla de Berk. Su vida da un giro inesperado cuando logra capturar a un temible dragón Furia Nocturna, al que llama Desdentado. Al convivir con él, descubre que los dragones no son monstruos malvados, desafiando las creencias de todo su pueblo.</p>
             </section>
 
             <section id="personajes">
                 <h2>Personajes Principales</h2>
                 <ul>
-                    <li><strong>[Personaje 1]:</strong> Interpretado por [Actor/Actriz].</li>
-                    <li><strong>[Personaje 2]:</strong> Interpretado por [Actor/Actriz].</li>
-                    <li><strong>[Personaje 3]:</strong> Interpretado por [Actor/Actriz].</li>
+                    <li><strong>Hipo Abad Abatido III:</strong> Interpretado por Jay Baruchel (voz).</li>
+                    <li><strong>Astrid Hofferson:</strong> Interpretada por America Ferrera (voz).</li>
+                    <li><strong>Estoico el Vastosto:</strong> Interpretado por Gerard Butler (voz).</li>
                 </ul>
             </section>
 
             <section id="opinion">
                 <h2>Por qué es mi favorita</h2>
-                <p>En esta sección puedes explicar qué es lo que más te gusta de la película: la dirección, la banda sonora, los efectos visuales, la historia, etc.</p>
+                <p>Es mi película favorita por su increíble banda sonora compuesta por John Powell, la hermosa relación y evolución entre Hipo y Desdentado, y los impresionantes vuelos que transmiten una verdadera sensación de libertad y aventura.</p>
             </section>
         </article>
     </main>
@@ -219,9 +229,9 @@
     <aside>
         <h2>Datos Curiosos</h2>
         <ul>
-            <li><strong>Director:</strong> [Nombre del director]</li>
-            <li><strong>Año de lanzamiento:</strong> [Año]</li>
-            <li><strong>Género:</strong> [Género cinematográfico]</li>
+            <li><strong>Director:</strong> Dean DeBlois y Chris Sanders</li>
+            <li><strong>Año de lanzamiento:</strong> 2010</li>
+            <li><strong>Género:</strong> Animación / Fantasía / Aventura</li>
         </ul>
     </aside>
 
