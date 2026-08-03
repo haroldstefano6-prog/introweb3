@@ -1,96 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de personas</title>
-    <style>
-        table {
-            margin-bottom: 20px;
-        }
-        .tabla-resultado, .tabla-resultado th, .tabla-resultado td {
-            border: 1px solid black;
-            border-collapse: collapse;
-            padding: 8px;
-        }
-    </style>
+    <title>Registro de Personas</title>
 </head>
-<body>
-    <h2>Registro de personas</h2>
 
-    <form id="miFormulario">
+<body>
+
+    <h2>Registro de Personas</h2>
+
+    <form id="formulario">
+
         <table>
             <tr>
-                <td>Nombre:</td>
+                <td>Nombres:</td>
                 <td>
-                    <input id="txtNombre" type="text" required>
+                    <input id="txtNombres" type="text" required>
                 </td>
             </tr>
+
             <tr>
-                <td>Apellido:</td>
+                <td>Apellidos:</td>
                 <td>
-                    <input id="txtApellido" type="text" required>
+                    <input id="txtApellidos" type="text" required>
                 </td>
             </tr>
+
             <tr>
                 <td>Correo:</td>
                 <td>
                     <input id="txtCorreo" type="email" required>
                 </td>
             </tr>
+
             <tr>
                 <td>Edad:</td>
                 <td>
                     <input id="txtEdad" type="number" required>
                 </td>
             </tr>
+
             <tr>
                 <td></td>
                 <td>
-                    <button type="submit" id="btnRegistrar">Registrar</button>
+                    <button type="submit">Registrar</button>
                 </td>
             </tr>
         </table>
+
     </form>
 
-    <h3>Persona registrada</h3>
+    <br>
 
-    <div id="resultado">
-        Ninguno
-    </div>
+    <h3>Personas Registradas</h3>
+
+    <table border="1" cellpadding="5" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Correo</th>
+                <th>Edad</th>
+            </tr>
+        </thead>
+
+        <tbody id="cuerpoTabla">
+
+        </tbody>
+    </table>
+
+    <br><br>
+
+    <h3>Tabla de Multiplicar</h3>
+
+    <button id="btnTabla" type="button">
+        Generar Tabla de Multiplicar
+    </button>
+
+    <br><br>
+
+    <div id="resultadoTabla"></div>
+
+    <script src="js/script.js"></script>
 
 </body>
+
 </html>
-
-<script>
-    var form = document.getElementById('miFormulario');
-    
-    form.addEventListener('submit', function(e) {
-        e.preventDefault(); 
-        var nombre = document.getElementById('txtNombre').value;
-        var apellido = document.getElementById('txtApellido').value;
-        var correo = document.getElementById('txtCorreo').value;
-        var edad = document.getElementById('txtEdad').value;
-
-        document.getElementById("resultado").innerHTML = 
-            "<table class='tabla-resultado'>" +
-                "<tr>" +
-                    "<td><strong>Nombre</strong></td>" +
-                    "<td>" + nombre + "</td>" +
-                "</tr>" +
-                "<tr>" +
-                    "<td><strong>Apellido</strong></td>" +
-                    "<td>" + apellido + "</td>" +
-                "</tr>" +
-                "<tr>" +
-                    "<td><strong>Correo</strong></td>" +
-                    "<td>" + correo + "</td>" +
-                "</tr>" +
-                "<tr>" +
-                    "<td><strong>Edad</strong></td>" +
-                    "<td>" + edad + "</td>" +
-                "</tr>" +
-            "</table>";
-    });
-</script>
