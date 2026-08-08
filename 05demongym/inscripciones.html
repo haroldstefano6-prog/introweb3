@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Harold Peñarrieta">
+    <title>Demon Gym - Inscripciones</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Demon Gym</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="planes.html">Planes</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="inscripciones.html" class="active">Inscripciones</a></li>
+            </ul>
+        </nav>
+        <button id="theme-toggle">☀️ Modo Claro</button>
+    </header>
+
+    <main>
+        <!-- 3 Indicadores Estadísticos -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Inscritos</h3>
+                <p id="stat-total">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Promedio Edad</h3>
+                <p id="stat-edad">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Plan Más Popular</h3>
+                <p id="stat-plan">N/A</p>
+            </div>
+        </div>
+
+        <div class="crud-container">
+    <div class="form-section">
+        <h3 style="margin-bottom: 1.5rem; color: var(--primary-color);">Registrar Miembro</h3>
+        <form id="crud-form">
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" required placeholder="Ej: Harold">
+            </div>
+            <div class="form-group">
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" required placeholder="Ej: Peñarrieta">
+            </div>
+            <div class="form-group">
+                <label for="edad">Edad</label>
+                <input type="number" id="edad" required placeholder="Ej: 18">
+            </div>
+            <div class="form-group">
+                <label for="plan">Plan de Entrenamiento</label>
+                <select id="plan" required>
+                    <option value="">-- Elige un Plan --</option>
+                    <option value="Plan Básico">Plan Básico ($25 / mes)</option>
+                    <option value="Plan Pro">Plan Pro ($45 / mes)</option>
+                    <option value="Plan Élite">Plan Élite ($70 / mes)</option>
+                    <option value="Promo Dúo">Promo Dúo - Pareja/Amigos ($75 / mes)</option>
+                    <option value="Anualidad Legendaria">Anualidad Legendaria ($420 / año)</option>
+                </select>
+            </div>
+            <button type="submit" id="btn-submit" class="btn">Guardar Inscripción</button>
+        </form>
+    </div>
+
+    <div class="table-section">
+        <h3 style="margin-bottom: 1.5rem; color: var(--primary-color);">Directorio de Miembros</h3>
+        
+        <!-- Controles de búsqueda y filtro -->
+        <div style="display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap;">
+            <input type="text" id="search" placeholder="🔍 Buscar por nombre..." style="flex: 1; min-width: 150px;">
+            <select id="sort" style="flex: 1; min-width: 150px;">
+                <option value="">Ordenar por...</option>
+                <option value="nombre">Nombre</option>
+                <option value="edad">Edad</option>
+                <option value="plan">Plan</option>
+            </select>
+        </div>
+        <button id="export-btn" class="btn" style="margin-bottom: 15px; background: #e74c3c;">📥 Exportar CSV</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Edad</th>
+                    <th>Plan</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-body">
+                <!-- Los registros se cargan dinámicamente -->
+            </tbody>
+        </table>
+    </div>
+</div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Demon Gym - Desarrollado por Harold Peñarrieta</p>
+    </footer>
+    <script src="js/app.js"></script>
+</body>
+</html>

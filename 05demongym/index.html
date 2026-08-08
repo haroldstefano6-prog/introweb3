@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Harold Peñarrieta">
+    <title>Demon Gym - Inicio</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Demon Gym</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="planes.html">Planes</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="inscripciones.html">Inscripciones</a></li>
+            </ul>
+        </nav>
+        <button id="theme-toggle">☀️ Modo Claro</button>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Desata tu verdadero poder</h2>
+            <p>El acero no miente. Bienvenido al sistema de administración y membresías del gimnasio más brutal de la ciudad.</p>
+            <br>
+            <a href="inscripciones.html" class="btn-hero">Inscribirme Ahora</a>
+        </section>
+
+        <div class="section-center"><h2 class="section-title">¿Por qué elegirnos?</h2></div>
+        <section class="content-grid">
+            <div class="card">
+                <h3>🔥 Equipamiento Élite</h3>
+                <p>Máquinas biomecánicas de última generación y pesas de alto impacto diseñadas para maximizar tus resultados sin lesiones.</p>
+            </div>
+            <div class="card">
+                <h3>🕒 Acceso 24/7</h3>
+                <p>Tu motivación no tiene horario, nosotros tampoco. Accede en cualquier momento del día o de la noche con tu huella digital.</p>
+            </div>
+            <div class="card">
+                <h3>💪 Coaches Extremos</h3>
+                <p>Entrenadores altamente capacitados que te guiarán con rutinas de hipertrofia y guías nutricionales exactas.</p>
+            </div>
+        </section>
+
+        <div class="section-center"><h2 class="section-title">Experiencias de la Comunidad</h2></div>
+        
+        <!-- Contenedor dinámico de opiniones -->
+        <section class="content-grid" id="comentarios-grid">
+            <div class="card" style="border-top-color: #333;">
+                <p><em>"Desde que entré a Demon Gym mi rendimiento subió un 200%. El ambiente te obliga a dar más de lo que creías posible."</em></p>
+                <br><h3 style="font-size: 1.1rem; color: var(--primary-color);">- Carlos M. (Miembro Pro)</h3>
+            </div>
+            <div class="card" style="border-top-color: #333;">
+                <p><em>"No es un lugar para tomarse fotos, es un lugar para entrenar de verdad. El mejor equipamiento que he probado."</em></p>
+                <br><h3 style="font-size: 1.1rem; color: var(--primary-color);">- Andrea V. (Miembro Élite)</h3>
+            </div>
+        </section>
+
+        <!-- Formulario para dejar tu experiencia -->
+        <div class="comment-form-container">
+            <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--primary-color);">Cuéntanos tu experiencia</h3>
+            <form id="form-comentario">
+                <div class="form-group">
+                    <label>Tu Nombre o Alias</label>
+                    <input type="text" id="nombre-comentario" required placeholder="Ej: Mateo R.">
+                </div>
+                <div class="form-group">
+                    <label>Tu Opinión / Experiencia</label>
+                    <textarea id="texto-comentario" rows="3" required placeholder="¿Qué tal ha sido tu entrenamiento en Demon Gym?"></textarea>
+                </div>
+                <button type="submit" class="btn">Publicar Comentario</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Demon Gym - Desarrollado por Harold Peñarrieta</p>
+    </footer>
+    <script src="js/app.js"></script>
+</body>
+</html>

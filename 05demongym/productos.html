@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Harold Peñarrieta">
+    <meta name="description" content="Demon Gym - Tienda de productos y accesorios deportivos">
+    <title>Demon Gym - Productos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
+    <header>
+        <h1>Demon Gym</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="planes.html">Planes</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="productos.html" class="active">Productos</a></li>
+                <li><a href="inscripciones.html">Inscripciones</a></li>
+            </ul>
+        </nav>
+        <button id="theme-toggle" type="button">
+            ☀️ Modo Claro
+        </button>
+    </header>
+
+
+    <!-- =====================================================
+         CONTENIDO PRINCIPAL
+         ===================================================== -->
+    <main>
+
+        <!-- HERO -->
+        <section class="hero">
+            <h2>Demon Store</h2>
+            <p>Suplementación nivel dios y armadura oficial de entrenamiento. Equípate con lo mejor.</p>
+        </section>
+
+        <!-- =================================================
+             PRODUCTOS
+             ================================================= -->
+        <section class="product-grid" aria-label="Productos disponibles">
+
+            <!-- PRODUCTO 1 -->
+            <article class="product-card">
+                <div class="product-img" aria-hidden="true">💊</div>
+                <h3>Demon Whey Isolate (2lbs)</h3>
+                <p class="product-description">Proteína aislada de rápida absorción sin azúcar.</p>
+                <div class="product-price">$45.00</div>
+                <button class="btn-buy" type="button" onclick="openPurchaseModal('Demon Whey Isolate (2lbs)', '45.00')">
+                    Comprar
+                </button>
+            </article>
+
+            <!-- PRODUCTO 2 -->
+            <article class="product-card">
+                <div class="product-img" aria-hidden="true">🔥</div>
+                <h3>Pre-Entreno "Hellfire"</h3>
+                <p class="product-description">Energía extrema, enfoque mental y bombeo.</p>
+                <div class="product-price">$35.00</div>
+                <button class="btn-buy" type="button" onclick="openPurchaseModal('Pre-Entreno Hellfire', '35.00')">
+                    Comprar
+                </button>
+            </article>
+
+            <!-- PRODUCTO 3 -->
+            <article class="product-card">
+                <div class="product-img" aria-hidden="true">⚡</div>
+                <h3>Creatina Monohidratada (300g)</h3>
+                <p class="product-description">Aumento de fuerza y volumen celular puro.</p>
+                <div class="product-price">$28.00</div>
+                <button class="btn-buy" type="button" onclick="openPurchaseModal('Creatina Monohidratada (300g)', '28.00')">
+                    Comprar
+                </button>
+            </article>
+
+            <!-- PRODUCTO 4 -->
+            <article class="product-card">
+                <div class="product-img" aria-hidden="true">🥤</div>
+                <h3>BCAA + Glutamina (400g)</h3>
+                <p class="product-description">Recuperación muscular óptima post-entreno.</p>
+                <div class="product-price">$30.00</div>
+                <button class="btn-buy" type="button" onclick="openPurchaseModal('BCAA + Glutamina (400g)', '30.00')">
+                    Comprar
+                </button>
+            </article>
+
+            <!-- PRODUCTO 5 -->
+            <article class="product-card">
+                <div class="product-img" aria-hidden="true">👕</div>
+                <h3>Camiseta Compresión "Beast"</h3>
+                <p class="product-description">Tela transpirable de alta resistencia.</p>
+                <div class="product-price">$22.50</div>
+                <button class="btn-buy" type="button" onclick="openPurchaseModal('Camiseta Compresión Beast', '22.50')">
+                    Comprar
+                </button>
+            </article>
+
+            <!-- PRODUCTO 6 -->
+            <article class="product-card">
+                <div class="product-img" aria-hidden="true">🎽</div>
+                <h3>Hoodie Oversized "Demon"</h3>
+                <p class="product-description">Estilo urbano y térmico para calentar.</p>
+                <div class="product-price">$38.00</div>
+                <button class="btn-buy" type="button" onclick="openPurchaseModal('Hoodie Oversized Demon', '38.00')">
+                    Comprar
+                </button>
+            </article>
+
+            <!-- PRODUCTO 7 -->
+            <article class="product-card">
+                <div class="product-img" aria-hidden="true">🦾</div>
+                <h3>Cinturón de Halterofilia Cuero</h3>
+                <p class="product-description">Soporte lumbar profesional para cargas pesadas.</p>
+                <div class="product-price">$40.00</div>
+                <button class="btn-buy" type="button" onclick="openPurchaseModal('Cinturón de Halterofilia Cuero', '40.00')">
+                    Comprar
+                </button>
+            </article>
+
+            <!-- PRODUCTO 8 -->
+            <article class="product-card">
+                <div class="product-img" aria-hidden="true">🥤</div>
+                <h3>Shaker Antiderrames V2</h3>
+                <p class="product-description">Con compartimento de polvo y rejilla mezcladora.</p>
+                <div class="product-price">$12.00</div>
+                <button class="btn-buy" type="button" onclick="openPurchaseModal('Shaker Antiderrames V2', '12.00')">
+                    Comprar
+                </button>
+            </article>
+
+        </section>
+
+        <!-- =================================================
+             MÉTODOS DE PAGO
+             ================================================= -->
+        <section class="payment-info">
+            <h3>Métodos de Pago Facilitados</h3>
+            <p>
+                Adquiere tus productos en recepción o en línea con total seguridad.
+                Aceptamos transferencias directas desde <strong>Banco Pichincha</strong>
+                o pagos al instante mediante la app <strong>DE UNA</strong>.
+            </p>
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         MODAL DE CONFIRMACIÓN DE COMPRA
+         ===================================================== -->
+    <div id="purchaseModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDescription">
+        <div class="demon-modal">
+            
+            <!-- Icono -->
+            <div class="modal-icon" aria-hidden="true">⚠️</div>
+
+            <!-- Título -->
+            <h3 id="modalTitle">Confirmar Compra</h3>
+
+            <!-- Descripción -->
+            <p id="modalDescription">Estás a punto de adquirir el siguiente producto:</p>
+
+            <!-- Información del producto -->
+            <div class="modal-product">
+                <div id="modalProductName" class="modal-product-name">Producto</div>
+                <div id="modalProductPrice" class="modal-product-price">$0.00</div>
+            </div>
+
+            <p>¿Deseas confirmar esta compra?</p>
+
+            <!-- Botones -->
+            <div class="modal-buttons">
+                <button type="button" class="btn-modal-cancel" id="cancelPurchase">Cancelar</button>
+                <button type="button" class="btn-modal-confirm" id="confirmPurchase">Confirmar Compra</button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+    <footer>
+        <p>&copy; 2026 Demon Gym - Desarrollado por Harold Peñarrieta</p>
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+    <script>
+        let selectedProduct = "";
+let selectedPrice = "";
+let isConfirmed = false; // Esta variable controla si ya se confirmó la compra
+
+/* =================================================
+   ELEMENTOS DEL MODAL
+   ================================================= */
+const purchaseModal = document.getElementById("purchaseModal");
+const modalProductName = document.getElementById("modalProductName");
+const modalProductPrice = document.getElementById("modalProductPrice");
+const confirmPurchaseButton = document.getElementById("confirmPurchase");
+const cancelPurchaseButton = document.getElementById("cancelPurchase");
+
+/* =================================================
+   ABRIR MODAL
+   ================================================= */
+function openPurchaseModal(productName, price) {
+    isConfirmed = false; // Cada vez que abrimos, reiniciamos el estado
+    selectedProduct = productName;
+    selectedPrice = price;
+
+    // Restauramos los textos originales por si se había hecho otra compra antes
+    document.getElementById("modalTitle").textContent = "Confirmar Compra";
+    document.getElementById("modalDescription").textContent = "Estás a punto de adquirir el siguiente producto:";
+    confirmPurchaseButton.textContent = "Confirmar Compra";
+    cancelPurchaseButton.style.display = "block";
+
+    // Mostramos los datos del producto
+    modalProductName.textContent = selectedProduct;
+    modalProductPrice.textContent = "$" + selectedPrice;
+
+    // Mostramos el modal
+    purchaseModal.classList.add("active");
+    document.body.style.overflow = "hidden"; // Evita que el fondo haga scroll
+}
+
+/* =================================================
+   CERRAR MODAL
+   ================================================= */
+function closePurchaseModal() {
+    purchaseModal.classList.remove("active");
+    document.body.style.overflow = "";
+}
+
+/* =================================================
+   ACCIÓN DEL BOTÓN PRINCIPAL (CONFIRMAR / CERRAR)
+   ================================================= */
+confirmPurchaseButton.onclick = function () {
+    if (!isConfirmed) {
+        // FASE 1: El usuario hace clic en "Confirmar Compra"
+        isConfirmed = true; // Cambiamos el estado
+        
+        // Actualizamos los textos para mostrar el éxito SIN cerrar el modal
+        document.getElementById("modalTitle").textContent = "¡Compra Confirmada!";
+        document.getElementById("modalDescription").textContent = "Tu solicitud ha sido registrada correctamente.";
+        
+        // Cambiamos el botón para que ahora sirva para salir
+        confirmPurchaseButton.textContent = "Cerrar";
+        cancelPurchaseButton.style.display = "none"; // Ocultamos el botón cancelar
+    } else {
+        // FASE 2: El usuario ya había confirmado, el botón dice "Cerrar"
+        closePurchaseModal();
+    }
+};
+
+/* =================================================
+   BOTÓN CANCELAR
+   ================================================= */
+cancelPurchaseButton.onclick = function () {
+    closePurchaseModal();
+};
+
+/* =================================================
+   CERRAR HACIENDO CLIC FUERA DEL MODAL
+   ================================================= */
+purchaseModal.addEventListener("click", function (event) {
+    if (event.target === purchaseModal) {
+        closePurchaseModal();
+    }
+});
+
+/* =================================================
+   CERRAR CON LA TECLA ESC
+   ================================================= */
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && purchaseModal.classList.contains("active")) {
+        closePurchaseModal();
+    }
+});
+
+/* =================================================
+   MODO CLARO / OSCURO
+   ================================================= */
+const themeToggle = document.getElementById("theme-toggle");
+const html = document.documentElement;
+
+themeToggle.addEventListener("click", function () {
+    const currentTheme = html.getAttribute("data-theme");
+
+    if (currentTheme === "dark") {
+        html.setAttribute("data-theme", "light");
+        themeToggle.textContent = "🌙 Modo Oscuro";
+    } else {
+        html.setAttribute("data-theme", "dark");
+        themeToggle.textContent = "☀️ Modo Claro";
+    }
+});
+
+/* =================================================
+   ESTADO INICIAL DEL TEMA
+   ================================================= */
+if (html.getAttribute("data-theme") === "dark") {
+    themeToggle.textContent = "☀️ Modo Claro";
+} else {
+    themeToggle.textContent = "🌙 Modo Oscuro";
+        }
+    </script>
+
+</body>
+</html>
